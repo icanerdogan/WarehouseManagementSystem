@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/drawable/background_splash.xml" value="0.1" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/drawable/ic_baseline_engineering_24.xml" value="0.1" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/drawable/ic_splashicon.xml" value="0.1" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/layout/activity_add_product.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/layout/activity_delete_product.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/layout/activity_entry_product.xml" value="0.1716485507246377" />
         <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/layout/activity_output_product.xml" value="0.1716485507246377" />
+        <entry key="..\:/Users/ibrahim.erdogan/OneDrive - Logo/Documents/Code/Kotlin/Projects/WarehouseManagementSystem/app/src/main/res/layout/activity_stock.xml" value="0.1716485507246377" />
       </map>
     </option>
   </component>

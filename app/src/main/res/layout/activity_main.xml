@@ -1,207 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="@color/bg_color"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="490dp"
-        android:orientation="vertical">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.05dp"
-            android:background="#808080" />
+    <LinearLayout android:id="@+id/linearLayoutActvityMain"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/bg_color"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".view.MainActivity">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
+            android:layout_width="350dp"
+            android:layout_height="490dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:background="#808080" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:background="@color/urunekle"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:layout_width="110dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="8"
-                    android:layout_gravity="center"
+                <LinearLayout
+                    android:id="@+id/buttonUrunEkle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
                     android:background="@color/urunekle"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/urunolustur" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Ürün Ekle"
-                    android:textSize="15sp"/>
-            </LinearLayout>
+                    <ImageButton
+                        android:id="@+id/_imageButtonUrunEkle"
+                        android:layout_width="110dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="8"
+                        android:layout_gravity="center"
+                        android:background="@color/urunekle"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/urunolustur" />
+
+                    <TextView
+                        android:id="@+id/_textViewUrunEkle"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Ürün Ekle"
+                        android:textSize="15sp"/>
+                </LinearLayout>
 
 
-            <View
-                android:layout_width="0.05dp"
-                android:layout_height="match_parent"
-                android:background="#808080" />
+                <View
+                    android:layout_width="0.05dp"
+                    android:layout_height="match_parent"
+                    android:background="#808080" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:background="@color/urunsil"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="110dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="8"
-                    android:layout_gravity="center"
+                <LinearLayout
+                    android:id="@+id/buttonUrunSil"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
                     android:background="@color/urunsil"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/urunsil" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Ürün Sil"
-                    android:textSize="15sp"/>
+                    <ImageButton
+                        android:id="@+id/_imageButtonUrunSil"
+                        android:layout_width="110dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="8"
+                        android:layout_gravity="center"
+                        android:background="@color/urunsil"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/urunsil" />
+
+                    <TextView
+                        android:id="@+id/_textViewUrunSil"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Ürün Sil"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.05dp"
-            android:background="#808080" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:background="@color/urungirisi"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="110dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="8"
-                    android:layout_gravity="center"
-                    android:background="@color/urungirisi"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/urungirisi" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Ürün Girişi"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
 
             <View
-                android:layout_width="0.05dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
                 android:background="#808080" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:background="@color/uruncikisi"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:layout_width="110dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="8"
-                    android:layout_gravity="center"
+                <LinearLayout
+                    android:id="@+id/buttonUrunGirisi"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@color/urungirisi"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/_imageButtonUrunGirisi"
+                        android:layout_width="110dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="8"
+                        android:layout_gravity="center"
+                        android:background="@color/urungirisi"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/urungirisi" />
+
+                    <TextView
+                        android:id="@+id/_textViewUrunGirisi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Ürün Girişi"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="0.05dp"
+                    android:layout_height="match_parent"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:id="@+id/buttonUrunCikisi"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
                     android:background="@color/uruncikisi"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/uruncikisi" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Ürün Çıkışı"
-                    android:textSize="15sp" />
+                    <ImageButton
+                        android:id="@+id/_imageButtonUrunCikisi"
+                        android:layout_width="110dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="8"
+                        android:layout_gravity="center"
+                        android:background="@color/uruncikisi"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/uruncikisi" />
+
+                    <TextView
+                        android:id="@+id/_textViewUrunCikisi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Ürün Çıkışı"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.05dp"
-            android:background="#808080" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:background="#808080" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:background="@color/stokgoruntule"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:layout_width="110dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="8"
-                    android:layout_gravity="center"
+                <LinearLayout
+                    android:id="@+id/buttonStokGoruntule"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
                     android:background="@color/stokgoruntule"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/stok" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Stok Görüntüle"
-                    android:textSize="15sp" />
+                    <ImageButton
+                        android:id="@+id/_imageButtonStokGoruntule"
+                        android:layout_width="110dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="8"
+                        android:layout_gravity="center"
+                        android:background="@color/stokgoruntule"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/stok" />
+
+                    <TextView
+                        android:id="@+id/_textViewStokGoruntule"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2.5"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Stok Görüntüle"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.05dp"
+                android:background="#808080" />
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.05dp"
-            android:background="#808080" />
     </LinearLayout>
-
-</LinearLayout>
+</layout>

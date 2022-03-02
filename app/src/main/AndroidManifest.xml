@@ -10,8 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WarehouseManagementSystem">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".view.StockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.OutputProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.EntryProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.DeleteProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.AddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CustomSplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
