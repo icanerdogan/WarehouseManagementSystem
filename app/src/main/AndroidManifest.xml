@@ -11,19 +11,24 @@
         android:theme="@style/Theme.WarehouseManagementSystem">
         <activity
             android:name=".view.StockActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Stok Görüntüle"/>
         <activity
             android:name=".view.OutputProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Ürün Çıkışı"/>
         <activity
             android:name=".view.EntryProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Ürün Girişi"/>
         <activity
             android:name=".view.DeleteProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Ürün Sil"/>
         <activity
             android:name=".view.AddProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Ürün Ekle"/>
         <activity
             android:name=".view.MainActivity"
             android:exported="true"

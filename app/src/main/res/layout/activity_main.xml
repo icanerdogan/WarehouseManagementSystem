@@ -36,24 +36,25 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/_imageButtonUrunEkle"
+                        android:id="@+id/imageButtonUrunEkle"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
-                        android:layout_weight="8"
+                        android:layout_weight="7"
                         android:layout_gravity="center"
                         android:background="@color/urunekle"
                         android:scaleType="fitCenter"
                         android:src="@drawable/urunolustur" />
 
                     <TextView
-                        android:id="@+id/_textViewUrunEkle"
+                        android:id="@+id/textViewUrunEkle"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="2.5"
+                        android:layout_weight="3"
                         android:gravity="center"
                         android:layout_marginBottom="10dp"
                         android:hint="Ürün Ekle"
                         android:textSize="15sp"/>
+
                 </LinearLayout>
 
 
@@ -71,7 +72,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/_imageButtonUrunSil"
+                        android:id="@+id/imageButtonUrunSil"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
                         android:layout_weight="8"
@@ -81,7 +82,7 @@
                         android:src="@drawable/urunsil" />
 
                     <TextView
-                        android:id="@+id/_textViewUrunSil"
+                        android:id="@+id/textViewUrunSil"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="2.5"
@@ -114,7 +115,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/_imageButtonUrunGirisi"
+                        android:id="@+id/imageButtonUrunGirisi"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
                         android:layout_weight="8"
@@ -124,7 +125,7 @@
                         android:src="@drawable/urungirisi" />
 
                     <TextView
-                        android:id="@+id/_textViewUrunGirisi"
+                        android:id="@+id/textViewUrunGirisi"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="2.5"
@@ -149,7 +150,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/_imageButtonUrunCikisi"
+                        android:id="@+id/imageButtonUrunCikisi"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
                         android:layout_weight="8"
@@ -159,7 +160,7 @@
                         android:src="@drawable/uruncikisi" />
 
                     <TextView
-                        android:id="@+id/_textViewUrunCikisi"
+                        android:id="@+id/textViewUrunCikisi"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="2.5"
@@ -191,7 +192,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
-                        android:id="@+id/_imageButtonStokGoruntule"
+                        android:id="@+id/imageButtonStokGoruntule"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
                         android:layout_weight="8"
@@ -201,7 +202,7 @@
                         android:src="@drawable/stok" />
 
                     <TextView
-                        android:id="@+id/_textViewStokGoruntule"
+                        android:id="@+id/textViewStokGoruntule"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="2.5"
