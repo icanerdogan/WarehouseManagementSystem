@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_color">#FFFFFFFF</color>
 
+    <color name="textviewbackground">#E4F9F5</color>
     <color name="urunekle">#FFFFFFFF</color>
     <color name="urunsil">#FFFFFFFF</color>
     <color name="urungirisi">#FFFFFFFF</color>

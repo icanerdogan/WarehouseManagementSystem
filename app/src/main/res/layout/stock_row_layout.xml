@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="stockproduct"
+            type="com.icanerdogan.warehousemanagementsystem.model.Product" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product Name"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:text="@{stockproduct.productName}"
+                android:textSize="15sp"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textViewProductModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product Model"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:text="@{stockproduct.productModel}"
+                android:textSize="15sp"
+                android:textColor="@color/black">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+            <TextView
+                android:id="@+id/textViewStock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Stok"
+                android:text="@{stockproduct.productStock.toString()}"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textColor="@color/black">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

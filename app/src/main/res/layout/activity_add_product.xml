@@ -18,22 +18,26 @@
             <EditText
                 android:id="@+id/editTextProductName"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
                 android:hint="Product Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:layout_marginBottom="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
+                android:layout_marginRight="30dp"
+                android:background="@drawable/textview_border"/>
 
             <EditText
                 android:id="@+id/editTextProductModel"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
                 android:hint="Product Model"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:layout_marginBottom="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"/>
+                android:layout_marginRight="30dp"
+                android:background="@drawable/textview_border"/>
         </LinearLayout>
 
         <!--<LinearLayout
@@ -58,13 +62,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="end"
-            android:layout_marginTop="300dp">
+            android:layout_marginTop="100dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_gravity="top
+"
                 android:layout_margin="30dp"
                 android:clickable="true"
                 app:srcCompat="@android:drawable/ic_input_add"/>
