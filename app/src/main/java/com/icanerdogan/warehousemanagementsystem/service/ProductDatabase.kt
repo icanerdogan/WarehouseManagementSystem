@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.icanerdogan.warehousemanagementsystem.model.Product
 
-@Database(entities = arrayOf(Product::class), version = 1)
+@Database(entities = arrayOf(Product::class), version = 2)
 abstract class ProductDatabase : RoomDatabase() {
 
     abstract fun productDao(): ProductDAO
@@ -24,9 +24,9 @@ abstract class ProductDatabase : RoomDatabase() {
             }
         }
 
-
         private fun makeDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext, ProductDatabase::class.java, "productdatabase"
-        ).build()
+        ).fallbackToDestructiveMigration()
+            .build()
     }
 }

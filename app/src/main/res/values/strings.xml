@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Warehouse Management System</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_model">Product Model</string>
+    <string name="select_category">Select Category</string>
+    <string name="product_barcode">Product Barcode</string>
+    <string-array name="category_array">
+        <item>Hammade</item>
+        <item>Yarı Mamul</item>
+        <item>Son Ürün</item>
+    </string-array>
 </resources>
