@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E4F9F5"
+        android:background="@color/winterhue1"
         android:orientation="vertical"
         tools:context=".view.AddProductActivity">
 
@@ -22,69 +22,62 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_margin="20dp"
                 android:hint="@string/select_category"
-                android:textColorHint="#40514E"
+                android:textColorHint="@color/winterhue4"
                 app:startIconDrawable="@drawable/ic_baseline_category"
-                app:startIconTint="#40514E">
+                app:startIconTint="@color/winterhue4">
 
                 <AutoCompleteTextView
                     android:id="@+id/autoCompleteTextCategory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#30E3CA"
+                    android:backgroundTint="@color/winterhue2"
                     android:inputType="none"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-smallcaps"/>
-
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_margin="20dp"
                 android:hint="@string/product_barcode"
-                android:textColorHint="#40514E"
+                android:textColorHint="@color/winterhue4"
                 app:endIconMode="clear_text"
-                app:endIconTint="#40514E"
+                app:endIconTint="@color/winterhue4"
                 app:startIconDrawable="@drawable/ic_baseline_barcode"
-                app:startIconTint="#40514E">
+                app:startIconTint="@color/winterhue4">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextProductBarcodeNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#30E3CA"
-                    android:gravity="center_vertical"
+                    android:background="@color/winterhue2"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    />
+                    android:inputType="number"
+                    android:maxLength="18"
+                    android:fontFamily="sans-serif-smallcaps" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_margin="20dp"
                 android:hint="@string/product_name"
-                android:textColorHint="#40514E"
+                android:textColorHint="@color/winterhue4"
                 app:endIconMode="clear_text"
-                app:endIconTint="#40514E"
+                app:endIconTint="@color/winterhue4"
                 app:startIconDrawable="@drawable/ic_baseline_turned_in_24"
-                app:startIconTint="#40514E">
+                app:startIconTint="@color/winterhue4">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextProductName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#30E3CA"
-                    android:gravity="center_vertical"
+                    android:background="@color/winterhue2"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-smallcaps"/>
@@ -93,21 +86,19 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
+                android:layout_margin="20dp"
                 android:hint="@string/product_model"
-                android:textColorHint="#40514E"
+                android:textColorHint="@color/winterhue4"
                 app:endIconMode="clear_text"
-                app:endIconTint="#40514E"
+                app:endIconTint="@color/winterhue4"
                 app:startIconDrawable="@drawable/ic_baseline_title_24"
-                app:startIconTint="#40514E">
+                app:startIconTint="@color/winterhue4">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextProductModel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#30E3CA"
+                    android:background="@color/winterhue2"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -132,12 +123,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_margin="30dp"
-                android:backgroundTint="#FFFFFF"
+                android:backgroundTint="@color/winterhue4"
                 android:clickable="true"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                android:tint="@color/white"
+                android:tintMode="screen"
+                app:srcCompat="@drawable/ic_baseline_add_24"
+                android:contentDescription="Ürün Ekle"/>
         </LinearLayout>
-
-
     </LinearLayout>
 
 </layout>

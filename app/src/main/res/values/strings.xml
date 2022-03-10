@@ -5,7 +5,7 @@
     <string name="select_category">Select Category</string>
     <string name="product_barcode">Product Barcode</string>
     <string-array name="category_array">
-        <item>Hammade</item>
+        <item>Hammadde</item>
         <item>Yarı Mamul</item>
         <item>Son Ürün</item>
     </string-array>

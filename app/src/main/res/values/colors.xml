@@ -15,5 +15,17 @@
     <color name="urungirisi">#FFFFFFFF</color>
     <color name="uruncikisi">#FFFFFFFF</color>
     <color name="stokgoruntule">#FFFFFFFF</color>
+    
+    <color name="greyhue1">#EEEEEE</color>
+    <color name="greyhue2">#00ADB5</color>
+    <color name="greyhue3">#393E46</color>
+    <color name="greyhue4">#222831</color>
+
+    <color name="winterhue1">#F9F7F7</color>
+    <color name="winterhue2">#DBE2EF</color>
+    <color name="winterhue3">#3F72AF</color>
+    <color name="winterhue4">#112D4E</color>
+    <color name="winterhue5">#0F4C75</color>
+    <color name="winterhue6">#1B262C</color>
     <!--c0d6e4 - -->
 </resources>
