@@ -6,3 +6,10 @@
 <img src="images/wms.png"></img>
 </p>
 
+Main Screen        | 
+:-------------------------:|
+![](images/main.png)  |  
+
+Add Product Screen        |  Stock Screen  
+:-------------------------:|:-------------------------:
+![](images/addproduct.png)  |  ![](images/stock.png) 
