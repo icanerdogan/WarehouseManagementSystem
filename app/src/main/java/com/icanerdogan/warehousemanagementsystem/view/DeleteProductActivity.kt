@@ -28,8 +28,16 @@ class DeleteProductActivity : AppCompatActivity() {
             }else{
                 deleteModelName = deleteProductBinding.editTextDeleteProductModel.text.toString()
                 deleteBarcodeNumber = deleteProductBinding.editTextDeleteProductBarcodeNumber.text.toString().toLong()
-                deleteProductViewModel.deleteData(deleteBarcodeNumber, deleteModelName)
-                Toast.makeText(this, "Ürün Başarıyla Silindi!", Toast.LENGTH_SHORT).show()
+
+                deleteProductViewModel.findData(deleteBarcodeNumber)
+
+                if (deleteProductViewModel.findedProduct.value == null){
+                    Toast.makeText(this, "Barkod Numarası Bulunamadı!", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    deleteProductViewModel.deleteData(deleteBarcodeNumber, deleteModelName)
+                    Toast.makeText(this, "Ürün Başarıyla Silindi!", Toast.LENGTH_SHORT).show()
+                }
             }
 
         }

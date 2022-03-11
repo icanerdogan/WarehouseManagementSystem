@@ -17,6 +17,8 @@ interface ProductDAO {
     @Query("DELETE FROM Product WHERE barcode = :productBarcode OR model = :productModel")
     suspend fun deleteProduct(productBarcode : Long, productModel: String)
 
+    @Query("SELECT * FROM Product WHERE barcode LIKE :barcode")
+    suspend fun findBarcode(barcode: Long?): List<Product>
     /*
     @Update
     suspend fun update(vararg product: Product)
