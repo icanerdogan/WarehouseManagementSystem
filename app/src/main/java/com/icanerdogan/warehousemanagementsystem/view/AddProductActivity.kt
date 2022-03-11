@@ -1,30 +1,25 @@
 package com.icanerdogan.warehousemanagementsystem.view
 
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
-import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import com.icanerdogan.warehousemanagementsystem.R
-import com.icanerdogan.warehousemanagementsystem.adapter.RecyclerViewStockAdapter
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityAddProductBinding
-import com.icanerdogan.warehousemanagementsystem.databinding.ActivityMainBinding
 import com.icanerdogan.warehousemanagementsystem.model.Product
 import com.icanerdogan.warehousemanagementsystem.viewmodel.AddProductViewModel
 
 class AddProductActivity : AppCompatActivity() {
     private lateinit var addProductBinding: ActivityAddProductBinding
     private lateinit var addProductViewModel: AddProductViewModel
-    private var selecetedCategoryItem : String = "Select Category"
+    private var selecetedCategoryItem: String = "Select Category"
 
     override fun onResume() {
         super.onResume()
         // Drop Down List
         val categories = resources.getStringArray(R.array.category_array)
-        val arrayAdapter = ArrayAdapter(this,R.layout.drop_down_list,categories)
+        val arrayAdapter = ArrayAdapter(this, R.layout.drop_down_list, categories)
         addProductBinding.autoCompleteTextCategory.setAdapter(arrayAdapter)
 
         addProductBinding.autoCompleteTextCategory.setOnItemClickListener { adapterView, view, position, id ->
@@ -38,31 +33,46 @@ class AddProductActivity : AppCompatActivity() {
         val view = addProductBinding.root
         setContentView(view)
 
-        addProductViewModel = ViewModelProvider(this).get(AddProductViewModel::class.java)
+        // View Model
+        addProductViewModel = ViewModelProvider(this)[AddProductViewModel::class.java]
 
+        // Add Click
         addProductBinding.floatingActionButton.setOnClickListener {
-            if (addProductBinding.editTextProductName.text!!.isEmpty() ||
-                addProductBinding.editTextProductModel.text!!.isEmpty() ||
-                addProductBinding.editTextProductBarcodeNumber.text!!.isEmpty() ||
-                selecetedCategoryItem.equals("Select Category")
-            ) {
-                Toast.makeText(this, "Boş Alan Bırakmayınız!", Toast.LENGTH_SHORT).show()
-            } else {
-                val product = Product(
-                    productName = addProductBinding.editTextProductName.text.toString(),
-                    productBarcodeNumber = addProductBinding.editTextProductBarcodeNumber.text.toString().toLong(),
-                    productModel = addProductBinding.editTextProductModel.text.toString(),
-                    productStock = 0,
-                    productCategory = selecetedCategoryItem,
-                    productID = null
-                )
-
-                addProductViewModel.addData(product)
-                Toast.makeText(applicationContext, "Ürün Başarıyla Eklendi!", Toast.LENGTH_SHORT).show()
-            }
-
+            addProductList()
         }
     }
 
+    private fun addProductList() {
+        if (fieldControl()) {
+            Toast.makeText(this, "Boş Alan Bırakmayınız!", Toast.LENGTH_SHORT).show()
+        } else {
+            addProductViewModel.addData(createProduct())
+            Toast.makeText(applicationContext, "Ürün Başarıyla Eklendi!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    // Boş Alan Kontrolü
+    private fun fieldControl(): Boolean {
+        if (addProductBinding.editTextProductName.text!!.isEmpty() ||
+            addProductBinding.editTextProductModel.text!!.isEmpty() ||
+            addProductBinding.editTextProductBarcodeNumber.text!!.isEmpty() ||
+            selecetedCategoryItem == "Select Category"
+        ) {
+            return true
+        }
+        return false
+    }
+
+    // Alınan Verileriden Ürün Yaratma
+    private fun createProduct(): Product {
+        return Product(
+            productName = addProductBinding.editTextProductName.text.toString(),
+            productBarcodeNumber = addProductBinding.editTextProductBarcodeNumber.text.toString().toLong(),
+            productModel = addProductBinding.editTextProductModel.text.toString(),
+            productStock = 0,
+            productCategory = selecetedCategoryItem,
+            productID = null
+        )
+    }
 
 }

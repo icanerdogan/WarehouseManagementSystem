@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout android:id="@+id/linearLayoutActvityMain"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearLayoutActvityMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@color/bg_color"
+        android:background="@color/winterhue1"
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".view.MainActivity">
 
         <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="490dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/winterhue1"
             android:orientation="vertical">
 
             <View
@@ -32,28 +37,29 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:background="@color/urunekle"
+
                     android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/imageButtonUrunEkle"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
-                        android:layout_weight="7"
                         android:layout_gravity="center"
-                        android:background="@color/urunekle"
+                        android:layout_weight="7"
                         android:scaleType="fitCenter"
+                        android:background="@color/winterhue1"
                         android:src="@drawable/urunolustur" />
 
                     <TextView
                         android:id="@+id/textViewUrunEkle"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_weight="3"
                         android:gravity="center"
-                        android:layout_marginBottom="10dp"
                         android:hint="Ürün Ekle"
-                        android:textSize="15sp"/>
+                        android:textColorHint="@color/hintTextColor"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -68,16 +74,16 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:background="@color/urunsil"
+                    android:background="@color/winterhue1"
                     android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/imageButtonUrunSil"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
-                        android:layout_weight="8"
                         android:layout_gravity="center"
-                        android:background="@color/urunsil"
+                        android:layout_weight="8"
+                        android:background="@color/winterhue1"
                         android:scaleType="fitCenter"
                         android:src="@drawable/urunsil" />
 
@@ -85,11 +91,12 @@
                         android:id="@+id/textViewUrunSil"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_weight="2.5"
                         android:gravity="center"
-                        android:layout_marginBottom="10dp"
                         android:hint="Ürün Sil"
-                        android:textSize="15sp"/>
+                        android:textColorHint="@color/hintTextColor"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -111,16 +118,16 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:background="@color/urungirisi"
+                    android:background="@color/winterhue1"
                     android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/imageButtonUrunGirisi"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
-                        android:layout_weight="8"
                         android:layout_gravity="center"
-                        android:background="@color/urungirisi"
+                        android:layout_weight="8"
+                        android:background="@color/winterhue1"
                         android:scaleType="fitCenter"
                         android:src="@drawable/urungirisi" />
 
@@ -128,10 +135,11 @@
                         android:id="@+id/textViewUrunGirisi"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_weight="2.5"
                         android:gravity="center"
-                        android:layout_marginBottom="10dp"
                         android:hint="Ürün Girişi"
+                        android:textColorHint="@color/hintTextColor"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -146,16 +154,16 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:background="@color/uruncikisi"
+                    android:background="@color/winterhue1"
                     android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/imageButtonUrunCikisi"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
-                        android:layout_weight="8"
                         android:layout_gravity="center"
-                        android:background="@color/uruncikisi"
+                        android:layout_weight="8"
+                        android:background="@color/winterhue1"
                         android:scaleType="fitCenter"
                         android:src="@drawable/uruncikisi" />
 
@@ -163,10 +171,11 @@
                         android:id="@+id/textViewUrunCikisi"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_weight="2.5"
                         android:gravity="center"
-                        android:layout_marginBottom="10dp"
                         android:hint="Ürün Çıkışı"
+                        android:textColorHint="@color/hintTextColor"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -181,6 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
+                android:background="@color/winterhue1"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -188,16 +198,16 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
-                    android:background="@color/stokgoruntule"
+                    android:background="@color/winterhue1"
                     android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/imageButtonStokGoruntule"
                         android:layout_width="110dp"
                         android:layout_height="70dp"
-                        android:layout_weight="8"
                         android:layout_gravity="center"
-                        android:background="@color/stokgoruntule"
+                        android:layout_weight="8"
+                        android:background="@color/winterhue1"
                         android:scaleType="fitCenter"
                         android:src="@drawable/stok" />
 
@@ -205,10 +215,11 @@
                         android:id="@+id/textViewStokGoruntule"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_weight="2.5"
                         android:gravity="center"
-                        android:layout_marginBottom="10dp"
                         android:hint="Stok Görüntüle"
+                        android:textColorHint="@color/hintTextColor"
                         android:textSize="15sp" />
                 </LinearLayout>
 

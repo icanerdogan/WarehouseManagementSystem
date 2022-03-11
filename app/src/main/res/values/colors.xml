@@ -27,5 +27,7 @@
     <color name="winterhue4">#112D4E</color>
     <color name="winterhue5">#0F4C75</color>
     <color name="winterhue6">#1B262C</color>
+
+    <color name="hintTextColor">#808080</color>
     <!--c0d6e4 - -->
 </resources>

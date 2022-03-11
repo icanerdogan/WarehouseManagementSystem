@@ -13,11 +13,11 @@ class StockViewModel(application: Application) : BaseViewModel(application) {
     fun getAllProductsData(){
         launch {
             val productsData = ProductDatabase(getApplication()).productDao().getAllProducts()
-            showCountries(productList = productsData)
+            showProducts(productList = productsData)
         }
     }
 
-    private fun showCountries(productList: List<Product>) {
+    private fun showProducts(productList: List<Product>) {
         products.value = productList
     }
 }

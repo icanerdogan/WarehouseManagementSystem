@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.icanerdogan.warehousemanagementsystem.databinding.StockRowLayoutBinding
 import com.icanerdogan.warehousemanagementsystem.model.Product
 
-class RecyclerViewStockAdapter(val productList : ArrayList<Product>) : RecyclerView.Adapter<RecyclerViewStockAdapter.RowHolder>()  {
+class RecyclerViewStockAdapter(private val productList : ArrayList<Product>) : RecyclerView.Adapter<RecyclerViewStockAdapter.RowHolder>()  {
     class RowHolder(val stockRowLayoutBinding: StockRowLayoutBinding) : RecyclerView.ViewHolder(stockRowLayoutBinding.root) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
@@ -26,6 +26,5 @@ class RecyclerViewStockAdapter(val productList : ArrayList<Product>) : RecyclerV
         productList.clear()
         productList.addAll(newProductList)
         notifyDataSetChanged()
-
     }
 }

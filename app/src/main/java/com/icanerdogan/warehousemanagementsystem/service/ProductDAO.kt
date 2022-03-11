@@ -2,10 +2,7 @@ package com.icanerdogan.warehousemanagementsystem.service
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.icanerdogan.warehousemanagementsystem.model.Product
 
 @Dao
@@ -16,6 +13,9 @@ interface ProductDAO {
 
     @Query("SELECT * FROM Product")
     suspend fun getAllProducts() : List<Product>
+
+    @Query("DELETE FROM Product WHERE barcode = :productBarcode OR model = :productModel")
+    suspend fun deleteProduct(productBarcode : Long, productModel: String)
 
     /*
     @Update
