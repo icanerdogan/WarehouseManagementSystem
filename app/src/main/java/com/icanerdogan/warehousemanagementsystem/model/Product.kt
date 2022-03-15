@@ -1,6 +1,5 @@
 package com.icanerdogan.warehousemanagementsystem.model
 
-import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -20,7 +19,7 @@ data class Product(
     val productModel: String?,
 
     @ColumnInfo(name = "stock")
-    val productStock: Int?,
+    var productStock: Int?,
 
     @ColumnInfo(name = "category")
     val productCategory: String?

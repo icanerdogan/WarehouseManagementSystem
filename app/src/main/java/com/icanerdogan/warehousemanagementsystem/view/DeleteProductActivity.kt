@@ -10,44 +10,39 @@ import com.icanerdogan.warehousemanagementsystem.viewmodel.DeleteProductViewMode
 class DeleteProductActivity : AppCompatActivity() {
     private lateinit var deleteProductBinding: ActivityDeleteProductBinding
     private lateinit var deleteProductViewModel: DeleteProductViewModel
-    private lateinit var deleteModelName : String
-    private var deleteBarcodeNumber : Long = 0
+
+    //private lateinit var deleteModelName : String
+    private var deleteBarcodeNumber: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         deleteProductBinding = ActivityDeleteProductBinding.inflate(layoutInflater)
         val view = deleteProductBinding.root
         setContentView(view)
-
         // View Model
         deleteProductViewModel = ViewModelProvider(this)[DeleteProductViewModel::class.java]
 
         deleteProductBinding.floatingActionButtonDelete.setOnClickListener {
-            if(fieldController()){
+            if (fieldController()) {
                 Toast.makeText(this, "Tüm Alanlar Boş Bırakılamaz!", Toast.LENGTH_SHORT).show()
-            }else{
-                deleteModelName = deleteProductBinding.editTextDeleteProductModel.text.toString()
+            } else {
                 deleteBarcodeNumber = deleteProductBinding.editTextDeleteProductBarcodeNumber.text.toString().toLong()
 
-                deleteProductViewModel.findData(deleteBarcodeNumber)
-
-                if (deleteProductViewModel.findedProduct.value == null){
+                if (deleteProductViewModel.findedBarcode.value == null){
                     Toast.makeText(this, "Barkod Numarası Bulunamadı!", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    deleteProductViewModel.deleteData(deleteBarcodeNumber, deleteModelName)
+                    deleteProductViewModel.deleteData(deleteBarcodeNumber)
                     Toast.makeText(this, "Ürün Başarıyla Silindi!", Toast.LENGTH_SHORT).show()
                 }
             }
-
+            deleteProductViewModel.findBarcodeData(deleteBarcodeNumber)
         }
-
     }
 
     private fun fieldController(): Boolean {
-        if (deleteProductBinding.editTextDeleteProductModel.text!!.isEmpty() &&
-            deleteProductBinding.editTextDeleteProductBarcodeNumber.text!!.isEmpty())
-            {
+        if (//deleteProductBinding.editTextDeleteProductModel.text!!.isEmpty() &&
+            deleteProductBinding.editTextDeleteProductBarcodeNumber.text!!.isEmpty()) {
             return true
         }
         return false

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import com.icanerdogan.warehousemanagementsystem.model.Product
+import java.util.concurrent.Flow
 
 @Dao
 interface ProductDAO {
@@ -14,11 +15,18 @@ interface ProductDAO {
     @Query("SELECT * FROM Product")
     suspend fun getAllProducts() : List<Product>
 
-    @Query("DELETE FROM Product WHERE barcode = :productBarcode OR model = :productModel")
-    suspend fun deleteProduct(productBarcode : Long, productModel: String)
+    @Query("DELETE FROM Product WHERE barcode = :productBarcode")
+    suspend fun deleteProduct(productBarcode : Long?)
 
     @Query("SELECT * FROM Product WHERE barcode LIKE :barcode")
     suspend fun findBarcode(barcode: Long?): List<Product>
+
+    @Query("SELECT * FROM Product WHERE barcode LIKE :barcode")
+        suspend fun findOneBarcode(barcode: Long): List<Product>
+
+    @Update
+    suspend fun entryProduct(product: Product)
+
     /*
     @Update
     suspend fun update(vararg product: Product)

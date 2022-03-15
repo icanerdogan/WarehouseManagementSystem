@@ -1,13 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/winterhue1"
+        android:orientation="vertical"
         tools:context=".view.EntryProductActivity">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="@string/product_barcode"
+                android:textColorHint="@color/winterhue4"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/winterhue4"
+                app:startIconDrawable="@drawable/ic_baseline_barcode"
+                app:startIconTint="@color/winterhue4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEntryProductBarcodeNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/winterhue2"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:inputType="number"
+                    android:maxLength="18"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Stock Amount"
+                android:textColorHint="@color/winterhue4"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/winterhue4"
+                app:startIconDrawable="@drawable/ic_baseline_contact_support_24"
+                app:startIconTint="@color/winterhue4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEntryProductStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/winterhue2"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="end"
+            android:layout_weight="0.2">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="30dp"
+                android:backgroundTint="@color/winterhue4"
+                android:clickable="true"
+                android:contentDescription="Ürün Girişi"
+                android:tint="@color/white"
+                android:tintMode="screen"
+                app:srcCompat="@drawable/ic_baseline_wntry_product" />
+        </LinearLayout>
+    </LinearLayout>
+
 </layout>

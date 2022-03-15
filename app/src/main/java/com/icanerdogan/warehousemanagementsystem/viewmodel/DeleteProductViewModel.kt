@@ -7,22 +7,23 @@ import com.icanerdogan.warehousemanagementsystem.service.ProductDatabase
 import kotlinx.coroutines.launch
 
 class DeleteProductViewModel(application: Application) : BaseViewModel(application) {
-    var findedProduct = MutableLiveData<List<Product>>()
+    var findedBarcode = MutableLiveData<List<Product>>()
 
-    fun deleteData(productBarcodeNumber: Long, productModel : String) {
+    fun deleteData(productBarcodeNumber: Long) {
         launch {
-            ProductDatabase(getApplication()).productDao().deleteProduct(productBarcodeNumber, productModel)
+            ProductDatabase(getApplication()).productDao().deleteProduct(productBarcodeNumber)
         }
     }
 
-    fun findData(productBarcodeNumber: Long){
+    fun findBarcodeData(productBarcodeNumber: Long){
         launch {
-            val findedProduct = ProductDatabase(getApplication()).productDao().findBarcode(productBarcodeNumber)
-            showProducts(productList = findedProduct)
+            val findedBarcode = ProductDatabase(getApplication()).productDao().findBarcode(productBarcodeNumber)
+            showBarcodes(productList = findedBarcode)
         }
     }
 
-    private fun showProducts(productList: List<Product>) {
-        findedProduct.value = productList
+    private fun showBarcodes(productList: List<Product>) {
+        findedBarcode.value = productList
     }
+
 }

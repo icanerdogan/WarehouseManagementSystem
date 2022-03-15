@@ -10,7 +10,6 @@
         android:orientation="vertical"
         tools:context=".view.AddProductActivity">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -33,10 +32,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/winterhue2"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:inputType="none"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="sans-serif-smallcaps"/>
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -55,11 +54,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/winterhue2"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:inputType="number"
                     android:maxLength="18"
-                    android:fontFamily="sans-serif-smallcaps" />
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -78,9 +77,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/winterhue2"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="sans-serif-smallcaps"/>
+                    android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -99,13 +99,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/winterhue2"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="center_vertical"
+                    android:textAllCaps="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="sans-serif-smallcaps"/>
+                    android:textSize="20sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
         </LinearLayout>
@@ -125,10 +125,10 @@
                 android:layout_margin="30dp"
                 android:backgroundTint="@color/winterhue4"
                 android:clickable="true"
+                android:contentDescription="Ürün Ekle"
                 android:tint="@color/white"
                 android:tintMode="screen"
-                app:srcCompat="@drawable/ic_baseline_add_24"
-                android:contentDescription="Ürün Ekle"/>
+                app:srcCompat="@drawable/ic_baseline_add_24" />
         </LinearLayout>
     </LinearLayout>
 
