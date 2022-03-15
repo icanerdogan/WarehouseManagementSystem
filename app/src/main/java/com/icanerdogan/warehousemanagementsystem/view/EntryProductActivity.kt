@@ -17,48 +17,50 @@ import com.icanerdogan.warehousemanagementsystem.viewmodel.EntryProductViewModel
 class EntryProductActivity : AppCompatActivity() {
     private lateinit var entryProductBinding: ActivityEntryProductBinding
     private lateinit var entryProductViewModel: EntryProductViewModel
-/*
     private var entryBarcodeNumber: Long = 0
     private var updateStockAmount: Int = 0
-    private var updatedProduct: Product? = null
-*/
-
+    private var oldStockAmount : Int = 0
+    private var newStockAmount : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         entryProductBinding = ActivityEntryProductBinding.inflate(layoutInflater)
         val view = entryProductBinding.root
         setContentView(view)
+
         // View Model
         entryProductViewModel = ViewModelProvider(this)[EntryProductViewModel::class.java]
 
- /*       entryProductBinding.floatingActionButton.setOnClickListener {
+        entryProductViewModel.findedBarcode.observe(this) {
 
+            oldStockAmount = it[0].productStock.toString().toInt()
+            entryBarcodeNumber = entryProductBinding.editTextEntryProductBarcodeNumber.text.toString().toLong()
+            updateStockAmount = entryProductBinding.editTextEntryProductStock.text.toString().toInt()
+
+            newStockAmount = oldStockAmount + updateStockAmount
+
+            if (it.isEmpty()) {
+                Toast.makeText(this, "Barkod Numarası Bulunamadı!", Toast.LENGTH_SHORT).show()
+            } else {
+
+                entryProductViewModel.updateData(
+                    stockAmount = newStockAmount,
+                    productBarcodeNumber = entryBarcodeNumber
+                )
+                Toast.makeText(this, "Ürün Başarıyla Güncellendi!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        entryProductBinding.floatingActionButton.setOnClickListener {
             if (fieldController()) {
                 Toast.makeText(this, "İki Alanda Boş Bırakılamaz!", Toast.LENGTH_LONG).show()
             } else {
                 entryBarcodeNumber = entryProductBinding.editTextEntryProductBarcodeNumber.text.toString().toLong()
-                updateStockAmount = entryProductBinding.editTextEntryProductStock.text.toString().toInt()
-
-                updatedProduct = entryProductViewModel.getOneBarcode(entryBarcodeNumber)
-                updatedProduct?.let {
-                    it.productStock = updateStockAmount
-                    entryProductViewModel.updateData(it)
-                }
-
+                entryProductViewModel.findBarcodeData(entryBarcodeNumber)
             }
-*/
-            /* if(entryProductViewModel.product.value == null){
-                  Toast.makeText(this, "yok", Toast.LENGTH_LONG).show()
-             }
-             else{
-                 entryProductViewModel.updateData(updatedProduct)
-             }*/
-
-
         }
-
     }
-/*    private fun fieldController(): Boolean {
+
+    private fun fieldController(): Boolean {
         if (entryProductBinding.editTextEntryProductBarcodeNumber.text!!.isEmpty() ||
             entryProductBinding.editTextEntryProductStock.text!!.isEmpty()
         ) {
@@ -66,6 +68,7 @@ class EntryProductActivity : AppCompatActivity() {
         }
         return false
     }
-}*/
+
+}
 
 

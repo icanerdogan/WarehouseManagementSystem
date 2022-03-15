@@ -6,9 +6,6 @@
         <variable
             name="stockproduct"
             type="com.icanerdogan.warehousemanagementsystem.model.Product" />
-        <variable
-            name="stock"
-            type="com.icanerdogan.warehousemanagementsystem.adapter.StockClickListener" />
     </data>
 
     <LinearLayout

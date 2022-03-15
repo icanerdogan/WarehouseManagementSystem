@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-android'
 }
 
 android {
@@ -56,6 +57,7 @@ dependencies {
 
     // SPLASH API
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 
     /*
     //COMPOSE

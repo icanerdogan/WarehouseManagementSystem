@@ -3,13 +3,11 @@ package com.icanerdogan.warehousemanagementsystem.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.databinding.DataBindingUtil
-import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityMainBinding
+import com.icanerdogan.warehousemanagementsystem.service.ProductDatabase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding
@@ -23,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         getSupportActionBar()?.hide()
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(view)
-
 
         mainBinding.imageButtonUrunEkle.setOnClickListener {
             val intent = Intent(this, AddProductActivity::class.java)

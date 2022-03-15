@@ -26,6 +26,7 @@ class DeleteProductActivity : AppCompatActivity() {
             if (fieldController()) {
                 Toast.makeText(this, "Tüm Alanlar Boş Bırakılamaz!", Toast.LENGTH_SHORT).show()
             } else {
+
                 deleteBarcodeNumber = deleteProductBinding.editTextDeleteProductBarcodeNumber.text.toString().toLong()
 
                 if (deleteProductViewModel.findedBarcode.value == null){
