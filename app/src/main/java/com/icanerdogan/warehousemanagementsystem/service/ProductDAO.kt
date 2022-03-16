@@ -22,7 +22,7 @@ interface ProductDAO {
     suspend fun findBarcode(barcode: Long?): List<Product>
 
     @Query("UPDATE Product SET stock =:productstock WHERE barcode =:productbarcode")
-    suspend fun entryProduct(productstock : Int?, productbarcode: Long?)
+    suspend fun updateStockProduct(productstock : Int?, productbarcode: Long?)
 
 
 

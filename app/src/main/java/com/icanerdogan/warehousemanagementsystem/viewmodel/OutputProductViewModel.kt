@@ -6,7 +6,7 @@ import com.icanerdogan.warehousemanagementsystem.model.Product
 import com.icanerdogan.warehousemanagementsystem.service.ProductDatabase
 import kotlinx.coroutines.launch
 
-class EntryProductViewModel(application: Application) : BaseViewModel(application) {
+class OutputProductViewModel(application: Application) : BaseViewModel(application) {
     var findedBarcode = MutableLiveData<List<Product>>()
 
     fun updateData(stockAmount: Int, productBarcodeNumber: Long) {

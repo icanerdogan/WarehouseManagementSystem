@@ -42,8 +42,7 @@ class DeleteProductActivity : AppCompatActivity() {
     }
 
     private fun fieldController(): Boolean {
-        if (//deleteProductBinding.editTextDeleteProductModel.text!!.isEmpty() &&
-            deleteProductBinding.editTextDeleteProductBarcodeNumber.text!!.isEmpty()) {
+        if (deleteProductBinding.editTextDeleteProductBarcodeNumber.text!!.isEmpty()) {
             return true
         }
         return false

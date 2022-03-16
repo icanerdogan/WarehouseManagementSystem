@@ -38,7 +38,7 @@
                     android:textSize="20sp"
                     android:inputType="number"
                     android:maxLength="18"
-                    android:fontFamily="sans-serif-smallcaps" />
+                    android:fontFamily="serif" />
             </com.google.android.material.textfield.TextInputLayout>
 
 

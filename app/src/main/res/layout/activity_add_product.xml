@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/winterhue2"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="serif"
                     android:inputType="none"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/winterhue2"
-                    android:fontFamily="sans-serif-smallcaps"
+                    android:fontFamily="serif"
                     android:inputType="number"
                     android:maxLength="18"
                     android:textColor="@color/black"
@@ -77,8 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/winterhue2"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:textAllCaps="true"
+                    android:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -99,9 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/winterhue2"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:gravity="center_vertical"
-                    android:textAllCaps="true"
+                    android:fontFamily="serif"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
