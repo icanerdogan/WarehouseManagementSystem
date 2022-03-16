@@ -21,6 +21,9 @@ interface ProductDAO {
     @Query("SELECT * FROM Product WHERE barcode LIKE :barcode")
     suspend fun findBarcode(barcode: Long?): List<Product>
 
+    @Query("SELECT * FROM Product WHERE model LIKE :model OR barcode LIKE :barcode")
+    suspend fun findModelANDBarcode(model: String?, barcode: Long?): List<Product>
+
     @Query("UPDATE Product SET stock =:productstock WHERE barcode =:productbarcode")
     suspend fun updateStockProduct(productstock : Int?, productbarcode: Long?)
 

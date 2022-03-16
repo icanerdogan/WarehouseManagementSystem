@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityAddProductBinding
@@ -36,7 +37,17 @@ class AddProductActivity : AppCompatActivity() {
         // View Model
         addProductViewModel = ViewModelProvider(this)[AddProductViewModel::class.java]
 
+
         // Add Click
+        addProductViewModel.findedData.observe(this) {
+            if (it.isNotEmpty()) {
+                Toast.makeText(this, "Aynı Bilgilere Sahip Ürün Bulundu!", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                addProductViewModel.addData(createProduct())
+                Toast.makeText(applicationContext, "Ürün Başarıyla Eklendi!", Toast.LENGTH_SHORT).show()
+            }
+        }
         addProductBinding.floatingActionButton.setOnClickListener {
             addProductList()
         }
@@ -46,10 +57,12 @@ class AddProductActivity : AppCompatActivity() {
         if (fieldControl()) {
             Toast.makeText(this, "Boş Alan Bırakmayınız!", Toast.LENGTH_SHORT).show()
         } else {
-            addProductViewModel.addData(createProduct())
-            Toast.makeText(applicationContext, "Ürün Başarıyla Eklendi!", Toast.LENGTH_SHORT).show()
+            val addBarcodeNumber = addProductBinding.editTextProductBarcodeNumber.text.toString().toLong()
+            val addModel = addProductBinding.editTextProductModel.text.toString()
+            addProductViewModel.findSameData(addModel, addBarcodeNumber)
         }
     }
+
 
     // Boş Alan Kontrolü
     private fun fieldControl(): Boolean {
