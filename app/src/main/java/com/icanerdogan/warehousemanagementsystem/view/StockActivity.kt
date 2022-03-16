@@ -23,21 +23,21 @@ class StockActivity : AppCompatActivity() {
         stockBinding = ActivityStockBinding.inflate(layoutInflater)
         val view = stockBinding.root
         setContentView(view)
+
         // Adapter
         stockBinding.recyclerViewStock.layoutManager = LinearLayoutManager(applicationContext)
         stockBinding.recyclerViewStock.adapter = productAdapter
 
         // View Model
-        stockViewModel = ViewModelProvider(this).get(StockViewModel::class.java)
-        stockViewModel.products.observe(this, Observer { products ->
+        stockViewModel = ViewModelProvider(this)[StockViewModel::class.java]
+
+        stockViewModel.products.observe(this) { products ->
             products?.let {
                 productAdapter.updateProductList(products)
             }
 
-        })
-
+        }
+        // Observe Tetiklenmesi
         stockViewModel.getAllProductsData()
-
     }
-
 }

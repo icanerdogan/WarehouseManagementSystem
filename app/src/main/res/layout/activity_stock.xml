@@ -20,9 +20,9 @@
                 android:id="@+id/textStockName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.7"
+                android:layout_weight="0.5"
                 android:layout_margin="5dp"
-                android:hint="Ürün Adı / Modeli"
+                android:hint="@string/urun_ad_modeli"
                 android:textColorHint="#808080"
                 android:textSize="12sp"/>
 
@@ -33,7 +33,7 @@
                 android:layout_weight="0.3"
                 android:layout_margin="5dp"
                 android:gravity="center"
-                android:hint="Kategori"
+                android:hint="@string/kategori"
                 android:textColorHint="#808080"
                 android:textSize="12sp"/>
 
@@ -44,7 +44,7 @@
                 android:layout_weight="0.3"
                 android:layout_margin="5dp"
                 android:gravity="center"
-                android:hint="Güncel Stok"
+                android:hint="@string/g_ncel_stok"
                 android:textColorHint="#808080"
                 android:textSize="12sp"/>
         </LinearLayout>

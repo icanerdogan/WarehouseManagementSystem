@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityAddProductBinding
 import com.icanerdogan.warehousemanagementsystem.model.Product
@@ -37,10 +38,10 @@ class AddProductActivity : AppCompatActivity() {
         // View Model
         addProductViewModel = ViewModelProvider(this)[AddProductViewModel::class.java]
 
-
         // Add Click
         addProductViewModel.findedData.observe(this) {
             if (it.isNotEmpty()) {
+
                 Toast.makeText(this, "Aynı Bilgilere Sahip Ürün Bulundu!", Toast.LENGTH_SHORT).show()
             }
             else{
@@ -48,8 +49,23 @@ class AddProductActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Ürün Başarıyla Eklendi!", Toast.LENGTH_SHORT).show()
             }
         }
+
         addProductBinding.floatingActionButton.setOnClickListener {
-            addProductList()
+            MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
+            .setTitle("İşlem Onayı")
+            .setMessage("Ürün Eklemeyi Onaylıyor musun?")
+            .setNeutralButton(resources.getString(R.string.cancel)) { dialog, which ->
+                dialog.cancel()
+            }
+            .setNegativeButton(resources.getString(R.string.decline)) { dialog, which ->
+                dialog.cancel()
+                Toast.makeText(this, "Ürün Ekleme İşlemi Başarısız!", Toast.LENGTH_LONG).show()
+            }
+            .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                addProductList()
+                dialog.cancel()
+            }
+            .show()
         }
     }
 

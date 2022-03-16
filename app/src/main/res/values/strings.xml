@@ -4,6 +4,14 @@
     <string name="product_model">Product Model</string>
     <string name="select_category">Select Category</string>
     <string name="product_barcode">Product Barcode</string>
+    <string name="accept">Evet</string>
+    <string name="decline">Hayır</string>
+    <string name="cancel">Kapat</string>
+    <string name="category">Category</string>
+    <string name="stok">Stok</string>
+    <string name="urun_ad_modeli">Ürün Adı / Modeli</string>
+    <string name="kategori">Kategori</string>
+    <string name="g_ncel_stok">Güncel Stok</string>
     <string-array name="category_array">
         <item>Hammadde</item>
         <item>Yarı Mamul</item>
