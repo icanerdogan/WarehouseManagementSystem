@@ -12,6 +12,11 @@
     <string name="urun_ad_modeli">Ürün Adı / Modeli</string>
     <string name="kategori">Kategori</string>
     <string name="g_ncel_stok">Güncel Stok</string>
+    <string name="stok_goruntule">Stok Görüntüle</string>
+    <string name="urun_girisi">Ürün Girişi</string>
+    <string name="urun_cikisi">Ürün Çıkışı</string>
+    <string name="urun_sil">Ürün Sil</string>
+    <string name="urun_ekle">Ürün Ekle</string>
     <string-array name="category_array">
         <item>Hammadde</item>
         <item>Yarı Mamul</item>
