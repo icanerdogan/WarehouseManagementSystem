@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:background="@color/greyhue1"
         android:columnCount="2"
-        android:rowCount="3">
+        android:rowCount="3"
+        tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
                     android:layout_weight="8"
                     android:background="@color/winterhue1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/urunolustur" />
+                    android:src="@drawable/urunolustur"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/textViewUrunEkle"
@@ -81,8 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+
                 android:background="@color/winterhue1"
                 android:orientation="vertical">
 
@@ -94,7 +95,8 @@
                     android:layout_weight="8"
                     android:background="@color/winterhue1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/urunsil" />
+                    android:src="@drawable/urunsil"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:id="@+id/textViewUrunSil"
@@ -140,7 +142,8 @@
                     android:layout_weight="8"
                     android:background="@color/winterhue1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/urungirisi" />
+                    android:src="@drawable/urungirisi"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:id="@+id/textViewUrunGirisi"
@@ -175,8 +178,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:background="@color/winterhue1"
                 android:orientation="vertical">
 
@@ -188,7 +189,8 @@
                     android:layout_weight="8"
                     android:background="@color/winterhue1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/uruncikisi" />
+                    android:src="@drawable/uruncikisi"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:id="@+id/textViewUrunCikisi"
@@ -228,13 +230,14 @@
 
                 <ImageButton
                     android:id="@+id/imageButtonStokGoruntule"
-                    android:layout_width="125dp"
+                    android:layout_width="110dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center"
                     android:layout_weight="8"
                     android:background="@color/winterhue1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/stok" />
+                    android:src="@drawable/stok"
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:id="@+id/textViewStokGoruntule"
