@@ -32,6 +32,7 @@ class DeleteProductActivity : AppCompatActivity() {
                 deleteProduct()
             }
         }
+
         // Tıklandığında Observe tetiklenecek!
         deleteProductBinding.floatingActionButtonDelete.setOnClickListener {
             MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
@@ -59,7 +60,7 @@ class DeleteProductActivity : AppCompatActivity() {
         Toast.makeText(this, "Ürün Başarıyla Silindi!", Toast.LENGTH_SHORT).show()
     }
 
-    // ViewModel Barkod Bul
+    // ViewModel Barkod Bul!
     private fun findDeleteProduct(){
         if (fieldController()) {
             Toast.makeText(this, "Tüm Alanlar Boş Bırakılamaz!", Toast.LENGTH_SHORT).show()
@@ -68,6 +69,7 @@ class DeleteProductActivity : AppCompatActivity() {
             deleteProductViewModel.findBarcodeData(deleteBarcodeNumber)
         }
     }
+
     // Boş Alan Kontrolü!
     private fun fieldController(): Boolean {
         if (deleteProductBinding.editTextDeleteProductBarcodeNumber.text!!.isEmpty()) {

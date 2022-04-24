@@ -16,10 +16,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = mainBinding.root
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         supportActionBar?.hide()
+
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())

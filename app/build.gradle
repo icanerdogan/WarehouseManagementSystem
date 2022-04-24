@@ -58,7 +58,9 @@ dependencies {
     // SPLASH API
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
-    
+
+    // BARCODE SCANNER
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.1.2'
 
     // NAVIGATION
 

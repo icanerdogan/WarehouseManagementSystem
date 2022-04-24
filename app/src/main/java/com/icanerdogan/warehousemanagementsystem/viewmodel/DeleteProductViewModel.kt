@@ -26,4 +26,5 @@ class DeleteProductViewModel(application: Application) : BaseViewModel(applicati
         findedBarcode.value = productList
     }
 
+
 }

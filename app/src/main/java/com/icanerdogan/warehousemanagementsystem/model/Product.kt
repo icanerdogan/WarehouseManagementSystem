@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "Product")
-data class Product(
+ @Entity(tableName = "Product")
+ data class Product(
     @PrimaryKey(autoGenerate = true)
     val productID: Int?,
 
@@ -23,4 +23,5 @@ data class Product(
 
     @ColumnInfo(name = "category")
     val productCategory: String?
-)
+ )
+
