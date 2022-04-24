@@ -9,7 +9,7 @@ plugins {
 
 android {
     compileSdk 32
-
+    kapt { generateStubs = true }
     defaultConfig {
         applicationId "com.icanerdogan.warehousemanagementsystem"
         minSdk 29
@@ -36,10 +36,10 @@ android {
     buildFeatures{
         dataBinding true
         viewBinding true
-        compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion "1.2.0-alpha04"
+        kotlinCompilerVersion "1.5.10"
+        kotlinCompilerExtensionVersion "1.0.0-beta08"
     }
 
 }
@@ -56,7 +56,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // SPLASH API
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 
     // BARCODE SCANNER
@@ -64,14 +64,14 @@ dependencies {
 
     // NAVIGATION
 
-    def nav_version = "2.4.1"
+    def nav_version = "2.4.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
-    def navVersion = '2.2.1'
+    def navVersion = '2.4.2'
     implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
