@@ -17,6 +17,7 @@
     <string name="urun_cikisi">Ürün Çıkışı</string>
     <string name="urun_sil">Ürün Sil</string>
     <string name="urun_ekle">Ürün Ekle</string>
+    <string name="barkod_tara">Barkod Tara</string>
     <string-array name="category_array">
         <item>Hammadde</item>
         <item>Yarı Mamul</item>

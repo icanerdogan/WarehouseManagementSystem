@@ -1,6 +1,9 @@
 package com.icanerdogan.warehousemanagementsystem.util
 
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +14,6 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.PackageManagerCompat
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
@@ -22,6 +24,9 @@ import com.icanerdogan.warehousemanagementsystem.databinding.ActivityBarcodeScan
 class BarcodeScannerActivity : AppCompatActivity() {
     private lateinit var barcodeScannerBinding: ActivityBarcodeScannerBinding
     private lateinit var codeScanner : CodeScanner
+
+    private lateinit var clipboard: ClipboardManager
+    private lateinit var clip: ClipData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,18 +57,22 @@ class BarcodeScannerActivity : AppCompatActivity() {
         codeScanner = CodeScanner(this, scannerView)
 
         // Parameters (default values)
-        codeScanner.camera = CodeScanner.CAMERA_BACK // or CAMERA_FRONT or specific camera id
-        codeScanner.formats = CodeScanner.ALL_FORMATS // list of type BarcodeFormat,
-        // ex. listOf(BarcodeFormat.QR_CODE)
-        codeScanner.autoFocusMode = AutoFocusMode.SAFE // or CONTINUOUS
-        codeScanner.scanMode = ScanMode.SINGLE // or CONTINUOUS or PREVIEW
-        codeScanner.isAutoFocusEnabled = true // Whether to enable auto focus or not
-        codeScanner.isFlashEnabled = false // Whether to enable flash or not
+        codeScanner.camera = CodeScanner.CAMERA_BACK
+        codeScanner.formats = CodeScanner.ALL_FORMATS
+
+        codeScanner.autoFocusMode = AutoFocusMode.SAFE
+        codeScanner.scanMode = ScanMode.SINGLE
+        codeScanner.isAutoFocusEnabled = true
+        codeScanner.isFlashEnabled = false
 
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
+                clipboard = this.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                clip = ClipData.newPlainText("BarcodeNumber", it.text)
+                clipboard.setPrimaryClip(clip)
+                Toast.makeText(this, "Barkod Numarası Kopyalandı!", Toast.LENGTH_SHORT).show();
+                super.onBackPressed();
             }
         }
         codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS

@@ -1,7 +1,11 @@
 package com.icanerdogan.warehousemanagementsystem.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -10,6 +14,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityAddProductBinding
 import com.icanerdogan.warehousemanagementsystem.model.Product
+import com.icanerdogan.warehousemanagementsystem.util.BarcodeScannerActivity
 import com.icanerdogan.warehousemanagementsystem.viewmodel.AddProductViewModel
 
 class AddProductActivity : AppCompatActivity() {
@@ -77,6 +82,22 @@ class AddProductActivity : AppCompatActivity() {
                 dialog.cancel()
             }
             .show()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.barcode_button, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.barcode -> {
+            val intent = Intent(this, BarcodeScannerActivity::class.java)
+            startActivity(intent)
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
         }
     }
 }
