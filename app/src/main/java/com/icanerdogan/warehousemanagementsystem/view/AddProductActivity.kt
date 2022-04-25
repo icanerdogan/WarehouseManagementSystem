@@ -11,6 +11,10 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityAddProductBinding
 import com.icanerdogan.warehousemanagementsystem.model.Product
@@ -18,7 +22,7 @@ import com.icanerdogan.warehousemanagementsystem.util.BarcodeScannerActivity
 import com.icanerdogan.warehousemanagementsystem.viewmodel.AddProductViewModel
 
 class AddProductActivity : AppCompatActivity() {
-
+    private lateinit var database: DatabaseReference
     private var selecetedCategoryItem: String = "Select Category"
     // Kategori seçimi
     override fun onResume() {
@@ -41,6 +45,15 @@ class AddProductActivity : AppCompatActivity() {
         addProductBinding = ActivityAddProductBinding.inflate(layoutInflater)
         val view = addProductBinding.root
         setContentView(view)
+        // Action Bar
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.back);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        // Database
+        database = Firebase.database.reference
         // View Model
         addProductViewModel = ViewModelProvider(this)[AddProductViewModel::class.java]
         // Observe
@@ -75,10 +88,21 @@ class AddProductActivity : AppCompatActivity() {
             .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
                 addProductViewModel.addProductList(
                     editTextProductName = addProductBinding.editTextProductName.text.toString(),
-                    editTextProductModel =addProductBinding.editTextProductModel.text.toString(),
-                    editTextProductBarcodeNumber =addProductBinding.editTextProductBarcodeNumber.text.toString().toLong(),
+                    editTextProductModel = addProductBinding.editTextProductModel.text.toString(),
+                    editTextProductBarcodeNumber = addProductBinding.editTextProductBarcodeNumber.text.toString().toLong(),
                     productSelecetedCategoryItem =selecetedCategoryItem
                 )
+
+                // Firebase Added!
+                database.child("products").child(addProductBinding.editTextProductBarcodeNumber.text.toString())
+                    .setValue(Product(
+                        null,
+                        addProductBinding.editTextProductName.text.toString(),
+                        addProductBinding.editTextProductBarcodeNumber.text.toString().toLong(),
+                        addProductBinding.editTextProductModel.text.toString(),
+                        0,
+                        selecetedCategoryItem)
+                    )
                 dialog.cancel()
             }
             .show()
@@ -94,6 +118,10 @@ class AddProductActivity : AppCompatActivity() {
         R.id.barcode -> {
             val intent = Intent(this, BarcodeScannerActivity::class.java)
             startActivity(intent)
+            true
+        }
+        android.R.id.home -> {
+            finish()
             true
         }
         else -> {

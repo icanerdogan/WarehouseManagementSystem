@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityOutputProductBinding
 import com.icanerdogan.warehousemanagementsystem.model.Product
@@ -19,6 +22,8 @@ import com.icanerdogan.warehousemanagementsystem.viewmodel.OutputProductViewMode
 import java.lang.StringBuilder
 
 class OutputProductActivity : AppCompatActivity() {
+    private lateinit var database: DatabaseReference
+
     private lateinit var outputProductViewModel: OutputProductViewModel
     private lateinit var outputProductBinding: ActivityOutputProductBinding
 
@@ -32,6 +37,15 @@ class OutputProductActivity : AppCompatActivity() {
         outputProductBinding = ActivityOutputProductBinding.inflate(layoutInflater)
         val view = outputProductBinding.root
         setContentView(view)
+        // Action Bar
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.back);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        // Database
+        database = Firebase.database.reference
 
         // ViewModel
         outputProductViewModel = ViewModelProvider(this)[OutputProductViewModel::class.java]
@@ -79,6 +93,10 @@ class OutputProductActivity : AppCompatActivity() {
             newStockAmount = oldStockAmount - updateStockAmount
 
             outputProductViewModel.updateData(stockAmount = newStockAmount, productBarcodeNumber = outputBarcodeNumber)
+
+            // Firebase Updated!
+            database.child("products").child(outputBarcodeNumber.toString()).child("productStock").setValue(newStockAmount)
+
             Toast.makeText(this, "Ürün Çıkışı Başarıyla Gerçekleşti!", Toast.LENGTH_SHORT).show()
         }
     }
@@ -112,6 +130,10 @@ class OutputProductActivity : AppCompatActivity() {
         R.id.barcode -> {
             val intent = Intent(this, BarcodeScannerActivity::class.java)
             startActivity(intent)
+            true
+        }
+        android.R.id.home -> {
+            finish()
             true
         }
         else -> {

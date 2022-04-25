@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "206071808021",
+    "project_id": "warehousemanagementsyste-579ac",
+    "storage_bucket": "warehousemanagementsyste-579ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206071808021:android:cb5dc2804c1de78915ce1c",
+        "android_client_info": {
+          "package_name": "com.icanerdogan.warehousemanagementsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206071808021-pi4q0mh9cb1h6toq0kouptn7t3km809r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVzO1ZEtctdgY6gszev7LK5k4IADR1ghk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206071808021-pi4q0mh9cb1h6toq0kouptn7t3km809r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

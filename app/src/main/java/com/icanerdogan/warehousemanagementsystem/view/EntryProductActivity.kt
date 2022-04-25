@@ -12,6 +12,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityDeleteProductBinding
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityEntryProductBinding
@@ -21,6 +24,8 @@ import com.icanerdogan.warehousemanagementsystem.viewmodel.DeleteProductViewMode
 import com.icanerdogan.warehousemanagementsystem.viewmodel.EntryProductViewModel
 
 class EntryProductActivity : AppCompatActivity() {
+    private lateinit var database: DatabaseReference
+
     private lateinit var entryProductBinding: ActivityEntryProductBinding
     private lateinit var entryProductViewModel: EntryProductViewModel
     private var entryBarcodeNumber: Long = 0
@@ -33,7 +38,15 @@ class EntryProductActivity : AppCompatActivity() {
         entryProductBinding = ActivityEntryProductBinding.inflate(layoutInflater)
         val view = entryProductBinding.root
         setContentView(view)
+        // Action Bar
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.back);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
+        // Database
+        database = Firebase.database.reference
         // View Model
         entryProductViewModel = ViewModelProvider(this)[EntryProductViewModel::class.java]
 
@@ -73,6 +86,10 @@ class EntryProductActivity : AppCompatActivity() {
         newStockAmount = oldStockAmount + updateStockAmount
 
         entryProductViewModel.updateData(stockAmount = newStockAmount, productBarcodeNumber = entryBarcodeNumber)
+
+        // Firebase Updated!
+        database.child("products").child(entryBarcodeNumber.toString()).child("productStock").setValue(newStockAmount)
+
         Toast.makeText(this, "Ürün Girişi Başarıyla Gerçekleşti!", Toast.LENGTH_SHORT).show()
     }
 
@@ -105,6 +122,10 @@ class EntryProductActivity : AppCompatActivity() {
         R.id.barcode -> {
             val intent = Intent(this, BarcodeScannerActivity::class.java)
             startActivity(intent)
+            true
+        }
+        android.R.id.home -> {
+            finish()
             true
         }
         else -> {

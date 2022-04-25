@@ -1,20 +1,29 @@
 package com.icanerdogan.warehousemanagementsystem.view
 
+import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityDeleteProductBinding
 import com.icanerdogan.warehousemanagementsystem.util.BarcodeScannerActivity
 import com.icanerdogan.warehousemanagementsystem.viewmodel.DeleteProductViewModel
 
+
 class DeleteProductActivity : AppCompatActivity() {
+    private lateinit var database: DatabaseReference
+    private lateinit var query : Query
+
     private lateinit var deleteProductBinding: ActivityDeleteProductBinding
     private lateinit var deleteProductViewModel: DeleteProductViewModel
 
@@ -25,6 +34,16 @@ class DeleteProductActivity : AppCompatActivity() {
         deleteProductBinding = ActivityDeleteProductBinding.inflate(layoutInflater)
         val view = deleteProductBinding.root
         setContentView(view)
+        // Action Bar
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.back);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
+        // Database
+        database = Firebase.database.reference
+
         // View Model
         deleteProductViewModel = ViewModelProvider(this)[DeleteProductViewModel::class.java]
 
@@ -62,6 +81,7 @@ class DeleteProductActivity : AppCompatActivity() {
     // Ürünü Sil!
     private fun deleteProduct(){
         deleteProductViewModel.deleteData(deleteBarcodeNumber)
+        database.child("products").child(deleteProductBinding.editTextDeleteProductBarcodeNumber.text.toString()).removeValue()
         Toast.makeText(this, "Ürün Başarıyla Silindi!", Toast.LENGTH_SHORT).show()
     }
 
@@ -92,6 +112,10 @@ class DeleteProductActivity : AppCompatActivity() {
         R.id.barcode -> {
             val intent = Intent(this, BarcodeScannerActivity::class.java)
             startActivity(intent)
+            true
+        }
+        android.R.id.home -> {
+            finish()
             true
         }
         else -> {

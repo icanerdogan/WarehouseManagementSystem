@@ -33,7 +33,12 @@ class AddProductViewModel(application: Application):BaseViewModel(application) {
 
 
     // Alınan Verileriden Ürün Yaratma!
-     fun createProduct(productName: String, productBarcodeNumber: Long, productModel : String, productSelecetedCategoryItem : String): Product {
+     fun createProduct(
+        productName: String,
+        productBarcodeNumber: Long,
+        productModel : String,
+        productSelecetedCategoryItem : String)
+     : Product {
         return Product(
             productName = productName,
             productBarcodeNumber = productBarcodeNumber,
@@ -45,7 +50,12 @@ class AddProductViewModel(application: Application):BaseViewModel(application) {
     }
 
     // Boş Alan Kontrolü
-     fun fieldControl(editTextProductName : String,editTextProductModel: String,  editTextProductBarcodeNumber: Long, productSelecetedCategoryItem : String): Boolean {
+     fun fieldControl(
+        editTextProductName : String,
+        editTextProductModel: String,
+        editTextProductBarcodeNumber: Long,
+        productSelecetedCategoryItem : String)
+     : Boolean {
         if (editTextProductName.isEmpty() ||
             editTextProductModel.isEmpty() ||
             editTextProductBarcodeNumber.toString().isEmpty() ||
@@ -56,7 +66,12 @@ class AddProductViewModel(application: Application):BaseViewModel(application) {
         return false
     }
 
-     fun addProductList(editTextProductName : String, editTextProductModel: String,  editTextProductBarcodeNumber: Long, productSelecetedCategoryItem : String) {
+     fun addProductList(
+         editTextProductName : String,
+         editTextProductModel: String,
+         editTextProductBarcodeNumber: Long,
+         productSelecetedCategoryItem : String)
+     {
         if (fieldControl(editTextProductName, editTextProductModel, editTextProductBarcodeNumber, productSelecetedCategoryItem)) {
             Toast.makeText(context, "Boş Alan Bırakmayınız!", Toast.LENGTH_SHORT).show()
         } else {
