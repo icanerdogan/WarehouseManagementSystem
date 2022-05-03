@@ -5,6 +5,8 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.icanerdogan.warehousemanagementsystem.databinding.StockRowLayoutBinding
@@ -64,4 +66,4 @@ import com.icanerdogan.warehousemanagementsystem.model.Product
         productList.addAll(newProductList)
         notifyDataSetChanged()
     }
-}
+ }
