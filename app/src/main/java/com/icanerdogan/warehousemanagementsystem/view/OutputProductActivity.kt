@@ -67,7 +67,7 @@ class OutputProductActivity : AppCompatActivity() {
                 }
                 .setNegativeButton(resources.getString(R.string.decline)) { dialog, which ->
                     dialog.cancel()
-                    Toast.makeText(this, "Ürün Ekleme İşlemi Başarısız!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Ürün Çıkarma İşlemi Başarısız!", Toast.LENGTH_LONG).show()
                 }
                 .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
                     findOutputProduct()
