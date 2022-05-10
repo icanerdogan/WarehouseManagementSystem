@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    tools:context=".view.SignUpActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/signup_banner"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textColor="#0d6e6a"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:letterSpacing="0.03"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/forget"
+        android:hint="@string/name"
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/forget"
+        android:hint="@string/surname"
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/forget"
+        android:hint="@string/username"
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"/>
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/forget"
+        android:hint="@string/password"
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:background="@drawable/forget"
+        android:hint="@string/confirm_password"
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20dp"/>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button"
+        android:text="@string/register"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+        android:textAllCaps="false"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/already_have_an_account_sign_in"
+        android:textColor="#0d6e6a"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"/>
+
+</LinearLayout>

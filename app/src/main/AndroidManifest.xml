@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.icanerdogan.warehousemanagementsystem" >
+    package="com.icanerdogan.warehousemanagementsystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false"/>
+        android:required="false" />
 
     <application
         android:name=".MainApplication"
@@ -18,12 +18,27 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WarehouseManagementSystem"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.WarehouseManagementSystem">
+
+        <activity
+            android:name=".view.IntroActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CustomSplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.SignUpActivity"
+            android:exported="false" />
         <activity
             android:name=".util.BarcodeScannerActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".view.StockActivity"
             android:exported="false"
@@ -46,14 +61,8 @@
             android:label="Ürün Ekle" />
         <activity
             android:name=".view.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.CustomSplashScreenTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
-    </application>
 
+    </application>
 </manifest>

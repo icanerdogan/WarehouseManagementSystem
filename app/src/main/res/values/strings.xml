@@ -19,6 +19,16 @@
     <string name="urun_ekle">Ürün Ekle</string>
     <string name="barkod_tara">Barkod Tara</string>
     <string name="stok_ara">Stok Ara</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">REGISTER</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="dont_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="login">LOGIN</string>
+    <string name="welcome">Welcome!</string>
     <string-array name="category_array">
         <item>Hammadde</item>
         <item>Yarı Mamul</item>
