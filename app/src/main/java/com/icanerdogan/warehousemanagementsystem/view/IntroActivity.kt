@@ -8,9 +8,9 @@ import android.view.Window
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityIntroBinding
-import com.icanerdogan.warehousemanagementsystem.databinding.ActivityMainBinding
+import com.icanerdogan.warehousemanagementsystem.view.user.SignInActivity
+import com.icanerdogan.warehousemanagementsystem.view.user.SignUpActivity
 
 class IntroActivity : AppCompatActivity() {
     private lateinit var introBinding: ActivityIntroBinding

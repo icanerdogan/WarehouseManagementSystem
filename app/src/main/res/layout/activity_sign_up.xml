@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".view.SignUpActivity">
+    tools:context=".view.user.SignUpActivity">
 
     <ImageView
         android:layout_width="300dp"
