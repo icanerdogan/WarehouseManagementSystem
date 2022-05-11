@@ -24,6 +24,7 @@
         android:letterSpacing="0.03"/>
 
     <EditText
+        android:id="@+id/editTextSignUpName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"
@@ -37,6 +38,7 @@
         android:paddingLeft="20dp"/>
 
     <EditText
+        android:id="@+id/editTextSignUpSurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"
@@ -50,6 +52,7 @@
         android:paddingLeft="20dp"/>
 
     <EditText
+        android:id="@+id/editTextSignUpUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"
@@ -61,33 +64,39 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:paddingLeft="20dp"/>
+
     <EditText
+        android:id="@+id/editTextSignUpPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/forget"
         android:hint="@string/password"
-        android:textColorHint="@color/hintTextColor"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:paddingLeft="20dp"/>
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="15sp" />
 
     <EditText
+        android:id="@+id/editTextSignUpConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/forget"
         android:hint="@string/confirm_password"
-        android:textColorHint="@color/hintTextColor"
+        android:inputType="textPassword"
+        android:paddingStart="20dp"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:paddingStart="20dp"/>
+        android:textColorHint="@color/hintTextColor"
+        android:textSize="15sp" />
 
     <Button
+        android:id="@+id/buttonSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button"
@@ -101,6 +110,7 @@
         android:layout_marginEnd="100dp"/>
 
     <TextView
+        android:id="@+id/buttonSignUpToSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/already_have_an_account_sign_in"
