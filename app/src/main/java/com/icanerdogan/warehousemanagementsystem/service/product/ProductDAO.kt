@@ -1,4 +1,4 @@
-package com.icanerdogan.warehousemanagementsystem.service
+package com.icanerdogan.warehousemanagementsystem.service.product
 
 import androidx.room.*
 import com.icanerdogan.warehousemanagementsystem.model.Product

@@ -1,17 +1,14 @@
-package com.icanerdogan.warehousemanagementsystem.view
+package com.icanerdogan.warehousemanagementsystem.view.product
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.icanerdogan.warehousemanagementsystem.R
 import com.icanerdogan.warehousemanagementsystem.adapter.RecyclerViewStockAdapter
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityStockBinding
-import com.icanerdogan.warehousemanagementsystem.viewmodel.StockViewModel
+import com.icanerdogan.warehousemanagementsystem.viewmodel.product.StockViewModel
 
 class StockActivity : AppCompatActivity() {
     private lateinit var stockBinding: ActivityStockBinding

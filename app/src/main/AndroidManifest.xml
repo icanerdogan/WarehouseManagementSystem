@@ -31,32 +31,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.SignInActivity"
+            android:name=".view.user.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SignUpActivity"
+            android:name=".view.user.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".util.BarcodeScannerActivity"
             android:exported="false" />
         <activity
-            android:name=".view.StockActivity"
+            android:name=".view.product.StockActivity"
             android:exported="false"
             android:label="Stok Görüntüle" />
         <activity
-            android:name=".view.OutputProductActivity"
+            android:name=".view.product.OutputProductActivity"
             android:exported="false"
             android:label="Ürün Çıkışı" />
         <activity
-            android:name=".view.EntryProductActivity"
+            android:name=".view.product.EntryProductActivity"
             android:exported="false"
             android:label="Ürün Girişi" />
         <activity
-            android:name=".view.DeleteProductActivity"
+            android:name=".view.product.DeleteProductActivity"
             android:exported="false"
             android:label="Ürün Sil" />
         <activity
-            android:name=".view.AddProductActivity"
+            android:name=".view.product.AddProductActivity"
             android:exported="false"
             android:label="Ürün Ekle" />
         <activity

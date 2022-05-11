@@ -13,11 +13,11 @@ import com.icanerdogan.warehousemanagementsystem.databinding.StockRowLayoutBindi
 import com.icanerdogan.warehousemanagementsystem.model.Product
 
 
- class RecyclerViewStockAdapter(private val productList: ArrayList<Product>)
-     : RecyclerView.Adapter<RecyclerViewStockAdapter.RowHolder>() {
+class RecyclerViewStockAdapter(private val productList: ArrayList<Product>) :
+    RecyclerView.Adapter<RecyclerViewStockAdapter.RowHolder>() {
 
-    class RowHolder(val stockRowLayoutBinding: StockRowLayoutBinding)
-        : RecyclerView.ViewHolder(stockRowLayoutBinding.root)
+    class RowHolder(val stockRowLayoutBinding: StockRowLayoutBinding) :
+        RecyclerView.ViewHolder(stockRowLayoutBinding.root)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowHolder {
@@ -47,7 +47,8 @@ import com.icanerdogan.warehousemanagementsystem.model.Product
             }
             setOnLongClickListener {
                 val text = holder.stockRowLayoutBinding.textViewProductBarcodeNumber.text.toString()
-                clipboard = it.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                clipboard =
+                    it.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 clip = ClipData.newPlainText("BarcodeNumber", text)
                 clipboard.setPrimaryClip(clip)
                 Toast.makeText(it.context, "Barkod Numarası Kopyalandı!", Toast.LENGTH_SHORT)
@@ -66,4 +67,4 @@ import com.icanerdogan.warehousemanagementsystem.model.Product
         productList.addAll(newProductList)
         notifyDataSetChanged()
     }
- }
+}

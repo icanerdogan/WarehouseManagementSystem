@@ -9,7 +9,7 @@
         android:background="@color/winterhue1"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".view.DeleteProductActivity">
+        tools:context=".view.product.DeleteProductActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

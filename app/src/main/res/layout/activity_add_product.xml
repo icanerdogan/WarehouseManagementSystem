@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@color/winterhue1"
         android:orientation="vertical"
-        tools:context=".view.AddProductActivity">
+        tools:context=".view.product.AddProductActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

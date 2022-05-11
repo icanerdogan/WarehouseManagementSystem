@@ -1,4 +1,4 @@
-package com.icanerdogan.warehousemanagementsystem.view
+package com.icanerdogan.warehousemanagementsystem.view.user
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -8,18 +8,17 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.icanerdogan.warehousemanagementsystem.R
+import com.icanerdogan.warehousemanagementsystem.databinding.ActivityIntroBinding
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivitySignInBinding
-import com.icanerdogan.warehousemanagementsystem.databinding.ActivitySignUpBinding
 
-class SignUpActivity : AppCompatActivity() {
-    private lateinit var signUpBinding: ActivitySignUpBinding
+class SignInActivity : AppCompatActivity() {
+    private lateinit var signInBinding: ActivitySignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
 
-        signUpBinding = ActivitySignUpBinding.inflate(layoutInflater)
-        val view = signUpBinding.root
+        signInBinding = ActivitySignInBinding.inflate(layoutInflater)
+        val view = signInBinding.root
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         supportActionBar?.hide()
 
@@ -33,5 +32,6 @@ class SignUpActivity : AppCompatActivity() {
             )
         }
         setContentView(view)
+
     }
 }

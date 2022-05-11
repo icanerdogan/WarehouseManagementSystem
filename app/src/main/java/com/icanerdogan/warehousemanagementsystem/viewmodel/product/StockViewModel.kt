@@ -1,10 +1,10 @@
-package com.icanerdogan.warehousemanagementsystem.viewmodel
+package com.icanerdogan.warehousemanagementsystem.viewmodel.product
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.icanerdogan.warehousemanagementsystem.model.Product
-import com.icanerdogan.warehousemanagementsystem.service.ProductDatabase
+import com.icanerdogan.warehousemanagementsystem.service.product.ProductDatabase
+import com.icanerdogan.warehousemanagementsystem.viewmodel.BaseViewModel
 import kotlinx.coroutines.launch
 
 class StockViewModel(application: Application) : BaseViewModel(application) {

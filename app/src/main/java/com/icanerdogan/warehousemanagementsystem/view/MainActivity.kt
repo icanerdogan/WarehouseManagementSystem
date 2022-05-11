@@ -9,6 +9,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.icanerdogan.warehousemanagementsystem.databinding.ActivityMainBinding
+import com.icanerdogan.warehousemanagementsystem.view.product.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainBinding: ActivityMainBinding

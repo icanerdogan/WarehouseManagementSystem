@@ -1,4 +1,4 @@
-package com.icanerdogan.warehousemanagementsystem.viewmodel
+package com.icanerdogan.warehousemanagementsystem.viewmodel.product
 
 import android.app.Application
 import android.content.Context
@@ -6,10 +6,11 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.icanerdogan.warehousemanagementsystem.MainApplication
 import com.icanerdogan.warehousemanagementsystem.model.Product
-import com.icanerdogan.warehousemanagementsystem.service.ProductDatabase
+import com.icanerdogan.warehousemanagementsystem.service.product.ProductDatabase
+import com.icanerdogan.warehousemanagementsystem.viewmodel.BaseViewModel
 import kotlinx.coroutines.launch
 
-class AddProductViewModel(application: Application):BaseViewModel(application) {
+class AddProductViewModel(application: Application): BaseViewModel(application) {
     var findedData = MutableLiveData<List<Product>>()
     private var selecetedCategoryItem: String = "Select Category"
     private val context: Context = MainApplication.applicationContext()
