@@ -29,6 +29,7 @@
     <string name="dont_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
     <string name="login">LOGIN</string>
     <string name="welcome">Welcome!</string>
+    <string name="back_up">Silme İşlemini Geri Al!</string>
     <string-array name="category_array">
         <item>Hammadde</item>
         <item>Yarı Mamul</item>

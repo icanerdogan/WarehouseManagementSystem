@@ -16,9 +16,10 @@ class DeleteProductViewModel(application: Application) : BaseViewModel(applicati
         }
     }
 
-    fun findBarcodeData(productBarcodeNumber: Long){
+    fun findBarcodeData(productBarcodeNumber: Long) {
         launch {
-            val findedBarcode = ProductDatabase(getApplication()).productDao().findBarcode(productBarcodeNumber)
+            val findedBarcode =
+                ProductDatabase(getApplication()).productDao().findBarcode(productBarcodeNumber)
             showBarcodes(productList = findedBarcode)
         }
     }
@@ -28,4 +29,7 @@ class DeleteProductViewModel(application: Application) : BaseViewModel(applicati
     }
 
 
+    suspend fun findBackupData(productBarcodeNumber: Long): List<Product> {
+        return ProductDatabase(getApplication()).productDao().findBarcode(productBarcodeNumber)
+    }
 }

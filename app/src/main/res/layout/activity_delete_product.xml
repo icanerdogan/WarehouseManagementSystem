@@ -16,6 +16,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.8"
             android:gravity="center"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
 
@@ -43,48 +44,57 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-<!--            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:hint="@string/product_model"
-                android:textColorHint="@color/winterhue4"
-                app:endIconMode="clear_text"
-                app:endIconTint="@color/winterhue4"
-                app:startIconDrawable="@drawable/ic_baseline_title_24"
-                app:startIconTint="@color/winterhue4">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextDeleteProductModel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/winterhue2"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>-->
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_gravity="end"
-            android:layout_weight="0.2">
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButtonDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_margin="30dp"
-                android:backgroundTint="@color/winterhue4"
-                android:clickable="true"
-                android:tint="@color/white"
-                android:tintMode="screen"
-                app:srcCompat="@drawable/ic_baseline_delete"
-                android:contentDescription="Ürün Ekle"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="start"
+                android:layout_weight="0.3">
+
+                <Button
+                    android:id="@+id/buttonBackUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/white"
+                    android:text="@string/back_up"
+                    android:textAllCaps="false"
+                    android:backgroundTint="@color/hintTextColor"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="end"
+                android:layout_weight="0.7">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButtonDelete"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="30dp"
+                    android:backgroundTint="@color/winterhue4"
+                    android:clickable="true"
+                    android:tint="@color/white"
+                    android:tintMode="screen"
+                    app:srcCompat="@drawable/ic_baseline_delete"
+                    android:contentDescription="@string/urun_sil"
+                    app:fabCustomSize="54dp"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

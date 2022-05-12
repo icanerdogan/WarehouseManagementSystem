@@ -36,7 +36,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:paddingLeft="20dp"/>
+        android:paddingLeft="20dp"
+        android:singleLine="true"
+        android:maxLength="20"/>
 
     <EditText
         android:id="@+id/editTextSignInPassword"
@@ -51,7 +53,9 @@
         android:paddingLeft="20dp"
         android:textColor="@color/black"
         android:textColorHint="@color/hintTextColor"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:singleLine="true"
+        android:maxLength="30"/>
 
 
     <Button
