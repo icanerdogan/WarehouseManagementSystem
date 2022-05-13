@@ -62,13 +62,13 @@
                 <Button
                     android:id="@+id/buttonBackUp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_margin="10dp"
                     android:textColor="@color/white"
                     android:text="@string/back_up"
                     android:textAllCaps="false"
                     android:backgroundTint="@color/hintTextColor"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:gravity="center"
                     android:textSize="16sp"
                     android:layout_gravity="center"/>

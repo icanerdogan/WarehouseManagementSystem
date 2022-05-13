@@ -87,11 +87,23 @@ class DeleteProductActivity : AppCompatActivity() {
 
         deleteProductBinding.buttonBackUp.setOnClickListener {
             deleteProductBinding.buttonBackUp.visibility = View.GONE
+            // Add Room Backup Data
             addProductViewModel.addData(backupData!![0])
+
+            // Add Firebase Backup Data
+            database.child("products").child(backupData!![0].productBarcodeNumber.toString())
+                .setValue(Product(
+                    null,
+                    backupData!![0].productName.toString(),
+                    backupData!![0].productBarcodeNumber.toString().toLong(),
+                    backupData!![0].productModel.toString(),
+                    backupData!![0].productStock.toString().toInt(),
+                    backupData!![0].productCategory.toString())
+                )
 
             val handler = Handler(Looper.getMainLooper())
             handler.postDelayed(
-                Runnable {
+                {
                     Toast.makeText(this, "Ürün Başarıyla Geri Yüklendi!", Toast.LENGTH_SHORT)
                         .show()
                 }, 1000
